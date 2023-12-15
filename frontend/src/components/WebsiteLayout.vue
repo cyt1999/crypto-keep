@@ -195,7 +195,6 @@ export default {
           // Big(this.gamble).times(10**24).toFixed()
         );
         
-        console.log(response);
         for (let i = 0; i < response.length; i++) {
           const index = response[i][0]
           // console.log('解密数据',this.dateDecrypting(response[i][1]));
