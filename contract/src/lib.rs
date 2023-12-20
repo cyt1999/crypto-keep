@@ -21,22 +21,12 @@ impl Default for CryptoKeep {
 #[near_bindgen]
 impl CryptoKeep {
 
-    // 创建密码
-    // pub fn add_password(&mut self, account_id: String, encrypted_password: String, website: String, note: String, tags: Vec<String>) {
-    //     let password_info = PasswordInfo::new(encrypted_password, website, note, tags);
-    //     assert!(
-    //         self.passwords.get(&account_id).is_none(),
-    //         "An entry already exists for this account."
-    //     );
-    //     self.passwords.insert(&account_id, &password_info);
-    // }
     // 创建密码   
     pub fn add_password(&mut self, account_id: String, encrypted_password_info: String) {
         let mut passwords_list = self.passwords.get(&account_id).unwrap_or_else(Vec::new);
         passwords_list.push(encrypted_password_info);
         self.passwords.insert(&account_id, &passwords_list);
     }
-    
     
     
     // 更新密码
